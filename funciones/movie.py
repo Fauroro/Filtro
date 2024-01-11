@@ -52,7 +52,7 @@ def crearMovie():
         isActive = bool(input("Desea ingresar un genero adicional? Cualquier tecla para continuar ... Enter para finalizar"))
     peliculas=dataTemp["blockbuster"]
     peliculas.update({"peliculas":pelicula})
-    blockbuster.update(peliculas)
+    blockbuster.update({"blockbuster":peliculas})
     cf.addData(DATA_M,blockbuster)
 
 
