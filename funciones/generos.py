@@ -4,6 +4,7 @@ import funciones.corefile as cf
 DATA_G = 'data/genero.json'
 def crearGenero():
     genero = {}
+    id = 0
     cf.checkFile(DATA_G,genero)
     dataTemp = cf.readFile(DATA_G)
     if len(dataTemp)==0:

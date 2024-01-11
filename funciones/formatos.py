@@ -3,23 +3,24 @@ import funciones.corefile as cf
 
 DATA_F = 'data/formato.json'
 def crearFormato():
-    genero = {}
-    cf.checkFile(DATA_F,genero)
+    formato = {}
+    id = 0
+    cf.checkFile(DATA_F,formato)
     dataTemp = cf.readFile(DATA_F)
     if len(dataTemp)==0:
         id += 1
     else:
         id = len(dataTemp) + 1
-    idF = "A0"+str(id)
+    idF = "F0"+str(id)
     nombre = cf.validar("Ingrese el nombre del formato: ",str)
-    genero = {
+    formato = {
         "id": idF,
         "nombre": nombre
     }
-    cf.addData(DATA_F,idF,genero)
+    cf.addData(DATA_F,idF,formato)
 def listarFormato():
-    genero = {}
-    cf.checkFile(DATA_F,genero)
+    formato = {}
+    cf.checkFile(DATA_F,formato)
     dataTemp = cf.readFile(DATA_F)
     if len(dataTemp)==0:
         print("No se tienen formatos registrados.")
