@@ -4,9 +4,9 @@ import funciones.generos as g
 
 DATA_M = 'data/movie.json'
 def crearMovie():
-    blockbuster = {"peliculas":{}}
-    peliculas={}
-    pelicula={}
+    blockbuster = {}
+    peliculas = {}
+    pelicula = {}
     id=0
     cf.checkFile(DATA_M,blockbuster)
     dataTemp = cf.readFile(DATA_M)
