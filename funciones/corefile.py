@@ -43,7 +43,9 @@ def validar(txt,tipo):
             print("Error en el dato de ingreso...")
             os.system("pause")
         else:
-            if len(valor)==0:
-                print("olvido ingresar un dato")
+            if tipo==str:
+                if len(valor)==0 or valor<0:
+                    print("Error en el dato de ingreso...")
             else: 
                 return valor
+            return valor
