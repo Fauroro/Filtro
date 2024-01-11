@@ -5,13 +5,18 @@ DATA_F = 'data/formato.json'
 def crearFormato():
     genero = {}
     cf.checkFile(DATA_F,genero)
-    id = cf.validar("Ingrese el ID del formato: ",str)
+    dataTemp = cf.readFile(DATA_F)
+    if len(dataTemp)==0:
+        id += 1
+    else:
+        id = len(dataTemp) + 1
+    idF = "A0"+str(id)
     nombre = cf.validar("Ingrese el nombre del formato: ",str)
     genero = {
-        "id": id,
+        "id": idF,
         "nombre": nombre
     }
-    cf.addData(DATA_F,id,genero)
+    cf.addData(DATA_F,idF,genero)
 def listarFormato():
     genero = {}
     cf.checkFile(DATA_F,genero)

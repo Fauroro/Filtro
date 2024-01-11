@@ -3,6 +3,7 @@ import funciones.corefile as cf
 import funciones.generos as g
 import funciones.actores as a
 import funciones.formatos as f
+import funciones.movie as m
 
 menuPpal = ["Administrador de generos","Administrador de actores","Administrar de formatos","Gestor de informes","Gestor de peliculas","Salir"]
 menuGenre = ["Crear Genero","Listar generos","Ir a menu principal"]
@@ -17,9 +18,15 @@ def menuP():
     return cf.validar(":) ",int)
 
 def menuG():
+    head = """
++++++++++++++++++++++++++++
++    GESTOR DE GENEROS    +
++++++++++++++++++++++++++++
+"""
     isTrue = True
     while isTrue:
         os.system("cls")
+        print(head)
         for i,item in enumerate(menuGenre):
             print(f"{i+1} - {item}")
         try:
@@ -39,9 +46,15 @@ def menuG():
                 os.system("pause")
 
 def menuA():
+    head = """
++++++++++++++++++++++++++++
++    GESTOR DE ACTORES    +
++++++++++++++++++++++++++++
+"""
     isTrue = True
     while isTrue:
         os.system("cls")
+        print(head)
         for i,item in enumerate(menuActor):
             print(f"{i+1} - {item}")
         try:
@@ -61,9 +74,15 @@ def menuA():
                 os.system("pause")
 
 def menuF():
+    head = """
+++++++++++++++++++++++++++++
++    GESTOR DE FORMATOS    +
+++++++++++++++++++++++++++++
+"""
     isTrue = True
     while isTrue:
         os.system("cls")
+        print(head)
         for i,item in enumerate(menuFormat):
             print(f"{i+1} - {item}")
         try:
@@ -77,6 +96,42 @@ def menuF():
             elif opSF==2:
                 f.listarFormato()
             elif opSF==3:
+                isTrue = False
+            else:
+                print("Opcion seleccionada inexistente... Intente nuevamenete")
+                os.system("pause")
+
+def menuM():
+    head = """
++++++++++++++++++++++++++++++
++    GESTOR DE PELICULAS    +
++++++++++++++++++++++++++++++
+"""
+    isTrue = True
+    while isTrue:
+        os.system("cls")
+        print(head)
+        for i,item in enumerate(menuMovie):
+            print(f"{i+1} - {item}")
+        try:
+            opSF = cf.validar(":) ",int)
+        except ValueError:
+            print("Error en el dato de ingreso...")
+            os.system("pause")
+        else:
+            if opSF==1:
+                pass
+            elif opSF==2:
+                pass
+            elif opSF==3:
+                pass
+            elif opSF==4:
+                pass
+            elif opSF==5:
+                pass
+            elif opSF==6:
+                pass
+            elif opSF==7:
                 isTrue = False
             else:
                 print("Opcion seleccionada inexistente... Intente nuevamenete")

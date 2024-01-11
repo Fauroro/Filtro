@@ -4,14 +4,20 @@ import funciones.corefile as cf
 DATA_A = 'data/actor.json'
 def crearActor():
     genero = {}
+    id = 0
     cf.checkFile(DATA_A,genero)
-    id = cf.validar("Ingrese el ID del actor: ",str)
+    dataTemp = cf.readFile(DATA_A)
+    if len(dataTemp)==0:
+        id += 1
+    else:
+        id = len(dataTemp) + 1
+    idA = "A0"+str(id)
     nombre = cf.validar("Ingrese el nombre del actor: ",str)
     genero = {
-        "id": id,
+        "id": idA,
         "nombre": nombre
     }
-    cf.addData(DATA_A,id,genero)
+    cf.addData(DATA_A,idA,genero)
 def listarActor():
     genero = {}
     cf.checkFile(DATA_A,genero)

@@ -2,5 +2,9 @@
     "f01": {
         "id": "f01",
         "nombre": "dvd"
+    },
+    "f02": {
+        "id": "f02",
+        "nombre": "asdff"
     }
 }

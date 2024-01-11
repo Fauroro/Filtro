@@ -12,6 +12,7 @@ if __name__=='__main__':
 """
     while isActive:
         os.system("cls")
+        print(head)
         try:
             opMenu = menu.menuP()
         except ValueError:

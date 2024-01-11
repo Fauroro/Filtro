@@ -5,13 +5,18 @@ DATA_G = 'data/genero.json'
 def crearGenero():
     genero = {}
     cf.checkFile(DATA_G,genero)
-    id = cf.validar("Ingrese el ID del genero: ",str)
+    dataTemp = cf.readFile(DATA_G)
+    if len(dataTemp)==0:
+        id += 1
+    else:
+        id = len(dataTemp) + 1
+    idG = "G0"+str(id)
     nombre = cf.validar("Ingrese el nombre del genero: ",str)
     genero = {
-        "id": id,
+        "id": idG,
         "nombre": nombre
     }
-    cf.addData(DATA_G,id,genero)
+    cf.addData(DATA_G,idG,genero)
 def listarGenero():
     genero = {}
     cf.checkFile(DATA_G,genero)

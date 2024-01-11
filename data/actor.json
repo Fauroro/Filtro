@@ -1,6 +1,10 @@
 {
-    "a01": {
-        "id": "a01",
-        "nombre": "bond"
+    "A01": {
+        "id": "A01",
+        "nombre": "james bond"
+    },
+    "A02": {
+        "id": "A02",
+        "nombre": "r2d2"
     }
 }
