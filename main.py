@@ -21,9 +21,9 @@ if __name__=='__main__':
             if opMenu == 1:
                 menu.menuG()
             elif opMenu ==2:
-                pass
+                menu.menuA()
             elif opMenu ==3:
-                pass
+                menu.menuF()
             elif opMenu ==4:
                 pass
             elif opMenu ==5:

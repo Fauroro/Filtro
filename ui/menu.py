@@ -1,6 +1,8 @@
 import os
 import funciones.corefile as cf
 import funciones.generos as g
+import funciones.actores as a
+import funciones.formatos as f
 
 menuPpal = ["Administrador de generos","Administrador de actores","Administrar de formatos","Gestor de informes","Gestor de peliculas","Salir"]
 menuGenre = ["Crear Genero","Listar generos","Ir a menu principal"]
@@ -31,6 +33,50 @@ def menuG():
             elif opSG==2:
                 g.listarGenero()
             elif opSG==3:
+                isTrue = False
+            else:
+                print("Opcion seleccionada inexistente... Intente nuevamenete")
+                os.system("pause")
+
+def menuA():
+    isTrue = True
+    while isTrue:
+        os.system("cls")
+        for i,item in enumerate(menuActor):
+            print(f"{i+1} - {item}")
+        try:
+            opSA = cf.validar(":) ",int)
+        except ValueError:
+            print("Error en el dato de ingreso...")
+            os.system("pause")
+        else:
+            if opSA==1:
+                a.crearActor()
+            elif opSA==2:
+                a.listarActor()
+            elif opSA==3:
+                isTrue = False
+            else:
+                print("Opcion seleccionada inexistente... Intente nuevamenete")
+                os.system("pause")
+
+def menuF():
+    isTrue = True
+    while isTrue:
+        os.system("cls")
+        for i,item in enumerate(menuFormat):
+            print(f"{i+1} - {item}")
+        try:
+            opSF = cf.validar(":) ",int)
+        except ValueError:
+            print("Error en el dato de ingreso...")
+            os.system("pause")
+        else:
+            if opSF==1:
+                f.crearFormato()
+            elif opSF==2:
+                f.listarFormato()
+            elif opSF==3:
                 isTrue = False
             else:
                 print("Opcion seleccionada inexistente... Intente nuevamenete")
