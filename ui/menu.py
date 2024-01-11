@@ -123,15 +123,19 @@ def menuM():
             if opSF==1:
                 m.crearMovie()
             elif opSF==2:
-                pass
+                print("en construccion")
+                os.system("pause")
             elif opSF==3:
                 m.delMovie()
             elif opSF==4:
-                pass
+                print("en construccion")
+                os.system("pause")
             elif opSF==5:
-                pass
+                print("en construccion")
+                os.system("pause")
             elif opSF==6:
-                pass
+                print("en construccion")
+                os.system("pause")
             elif opSF==7:
                 isTrue = False
             else:
@@ -157,11 +161,14 @@ def menuI():
             os.system("pause")
         else:
             if opSF==1:
-                pass
+                print("en construccion")
+                os.system("pause")
             elif opSF==2:
-                pass
+                print("en construccion")
+                os.system("pause")
             elif opSF==3:
-                pass
+                print("en construccion")
+                os.system("pause")
             elif opSF==4:
                 isTrue = False
             else:

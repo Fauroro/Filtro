@@ -4,7 +4,9 @@ import funciones.generos as g
 
 DATA_M = 'data/movie.json'
 def crearMovie():
-    blockbuster = {}
+    blockbuster = {"peliculas":{}}
+    peliculas={}
+    pelicula={}
     id=0
     cf.checkFile(DATA_M,blockbuster)
     dataTemp = cf.readFile(DATA_M)
@@ -22,7 +24,7 @@ def crearMovie():
         "duracion":duracion,
         "sinopsis":sinopsis
     }
-    peliculas={}
+    pelicula.update({idM:movie})
     dataGenre = cf.readFile(g.DATA_G)
     if len(dataGenre)==0:
         print("No se tienen generos registrados. Registre un genero para continuar ...")
@@ -47,14 +49,27 @@ def crearMovie():
                 movie.update({opG:temp})
                 isTrue = False
         isActive = bool(input("Desea ingresar un genero adicional? Cualquier tecla para continuar ... Enter para finalizar"))
-    peliculas.update({idM:movie})
-    blockbuster.update({"peliculas":peliculas})
-    cf.addData(DATA_M,"blockbuster",blockbuster)
+    peliculas.update({"peliculas":pelicula})
+    blockbuster.update(peliculas)
+    cf.addData(DATA_M,blockbuster)
 
 
 def delMovie():
-    dataMovie = cf.readFile(DATA_M)
-    for i,item in dataMovie.items():
+    blockbuster = cf.readFile(DATA_M)
+    peliculas=blockbuster["blockbuster"]["peliculas"] 
+    for i,item in peliculas.items():
         print(f"{i} - {item.get('nombre')}")
-    opDM = cf.validar("Ingrese el numero de la opcion el genero seleccionado",int)
-    cf.delData(DATA_M,opDM,dataMovie)    
+    isTrue = True
+    while isTrue:
+        opDM = cf.validar("Ingrese la opcion de la pelicula que desea eliminar ",str)
+        try:
+            temp = peliculas[opDM]
+        except KeyError:
+            print("Opcion de pelicula inexistente.")
+        else:
+            peliculas.pop[opDM]
+            isTrue = False
+
+    blockbuster.update({blockbuster["blockbuster"]["peliculas"]:peliculas})
+    blockbuster.update({"peliculas":peliculas})
+    cf.addData(DATA_M,"blockbuster",blockbuster)

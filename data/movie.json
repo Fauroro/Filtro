@@ -1,1 +1,16 @@
-{}
+{
+    "blockbuster": {
+        "peliculas": {
+            "P01": {
+                "id": "P01",
+                "nombre": "star",
+                "duracion": "120",
+                "sinopsis": "sadgdfdgadf",
+                "G01": {
+                    "id": "G01",
+                    "nombre": "accion"
+                }
+            }
+        }
+    }
+}

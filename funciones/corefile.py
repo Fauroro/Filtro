@@ -22,7 +22,7 @@ def checkFile(*args):
 def addData(*args):
     with open(args[0],"r+") as wrf:
         data = json.load(wrf)
-        if len(args)>1:
+        if len(args)>2:
             data.update({args[1]:args[2]})
         else:
             data.update(args[1])
@@ -30,10 +30,10 @@ def addData(*args):
         json.dump(data,wrf,indent=4)
         wrf.close()
 
-def delData(*args):
-    data = list(args)
-    data[2].pop(data[1])
-    newFile(data[0],data[2])
+# def delData(*args):
+#     data = list(args)
+#     data[2].pop(data[1])
+#     newFile(data[0],data[2])
 
 def validar(txt,tipo):
     isTrue = True
