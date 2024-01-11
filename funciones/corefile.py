@@ -2,29 +2,29 @@ import json
 import os
 DATABASE = ''
 
-def readFile():
-    with open(DATABASE,"r") as rf:
+def readFile(*args):
+    with open(args[0],"r") as rf:
         return json.load(rf)
 def newFile(*args):
-    with open(DATABASE,"w") as wf:
-        json.dump(args[0],wf,indent=4)
+    with open(args[0],"w") as wf:
+        json.dump(args[1],wf,indent=4)
 
 def checkFile(*args):
     data = list(args)
-    if os.path.isfile(DATABASE):
+    if os.path.isfile(args[0]):
         if len(args):
-            data[0].update(readFile())
+            data[1].update(readFile(data[0]))
     else:
         if len(args):
-            newFile(data[0])
+            newFile(data[0],data[1])
 
 def addData(*args):
-    with open(DATABASE,"r+") as wrf:
+    with open(args[0],"r+") as wrf:
         data = json.load(wrf)
         if len(args)>1:
-            data.update({args[0]:args[1]})
+            data.update({args[1]:args[2]})
         else:
-            data.update(args[0])
+            data.update(args[1])
         wrf.seek(0)
         json.dump(data,wrf,indent=4)
         wrf.close()
@@ -44,7 +44,7 @@ def validar(txt,tipo):
             os.system("pause")
         else:
             if tipo==str:
-                if len(valor)==0 or valor<0:
+                if len(valor)==0:
                     print("Error en el dato de ingreso...")
             else: 
                 return valor

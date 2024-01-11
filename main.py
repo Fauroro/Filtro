@@ -5,7 +5,13 @@ import ui.menu as menu
 
 if __name__=='__main__':
     isActive = True
+    head = """
+++++++++++++++++++++++++++++
++    BLOCKBUSTER - MENU    +
+++++++++++++++++++++++++++++
+"""
     while isActive:
+        os.system("cls")
         try:
             opMenu = menu.menuP()
         except ValueError:
@@ -13,7 +19,7 @@ if __name__=='__main__':
             os.system("pause")
         else:
             if opMenu == 1:
-                pass
+                menu.menuG()
             elif opMenu ==2:
                 pass
             elif opMenu ==3:
