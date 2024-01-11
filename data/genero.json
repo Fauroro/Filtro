@@ -1,10 +1,6 @@
 {
     "G01": {
         "id": "G01",
-        "nombre": "accio"
-    },
-    "G02": {
-        "id": "G02",
-        "nombre": "drama"
+        "nombre": "accion"
     }
 }

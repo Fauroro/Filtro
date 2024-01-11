@@ -5,6 +5,7 @@ DATABASE = ''
 def readFile(*args):
     with open(args[0],"r") as rf:
         return json.load(rf)
+    
 def newFile(*args):
     with open(args[0],"w") as wf:
         json.dump(args[1],wf,indent=4)
@@ -31,8 +32,8 @@ def addData(*args):
 
 def delData(*args):
     data = list(args)
-    data[1].pop(data[0])
-    newFile(data[1])
+    data[2].pop(data[1])
+    newFile(data[0],data[2])
 
 def validar(txt,tipo):
     isTrue = True

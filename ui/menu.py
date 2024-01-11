@@ -4,6 +4,7 @@ import funciones.generos as g
 import funciones.actores as a
 import funciones.formatos as f
 import funciones.movie as m
+import funciones.informe as i
 
 menuPpal = ["Administrador de generos","Administrador de actores","Administrar de formatos","Gestor de informes","Gestor de peliculas","Salir"]
 menuGenre = ["Crear Genero","Listar generos","Ir a menu principal"]
@@ -120,11 +121,11 @@ def menuM():
             os.system("pause")
         else:
             if opSF==1:
-                pass
+                m.crearMovie()
             elif opSF==2:
                 pass
             elif opSF==3:
-                pass
+                m.delMovie()
             elif opSF==4:
                 pass
             elif opSF==5:
@@ -132,6 +133,36 @@ def menuM():
             elif opSF==6:
                 pass
             elif opSF==7:
+                isTrue = False
+            else:
+                print("Opcion seleccionada inexistente... Intente nuevamenete")
+                os.system("pause")
+
+def menuI():
+    head = """
+++++++++++++++++++++++++++++
++    GESTOR DE INFORMES    +
+++++++++++++++++++++++++++++
+"""
+    isTrue = True
+    while isTrue:
+        os.system("cls")
+        print(head)
+        for i,item in enumerate(menuInforme):
+            print(f"{i+1} - {item}")
+        try:
+            opSF = cf.validar(":) ",int)
+        except ValueError:
+            print("Error en el dato de ingreso...")
+            os.system("pause")
+        else:
+            if opSF==1:
+                pass
+            elif opSF==2:
+                pass
+            elif opSF==3:
+                pass
+            elif opSF==4:
                 isTrue = False
             else:
                 print("Opcion seleccionada inexistente... Intente nuevamenete")

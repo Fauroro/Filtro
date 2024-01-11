@@ -26,9 +26,9 @@ if __name__=='__main__':
             elif opMenu ==3:
                 menu.menuF()
             elif opMenu ==4:
-                pass
+                menu.menuI()
             elif opMenu ==5:
-                pass
+                menu.menuM()
             elif opMenu ==6:
                 isActive = False
                 print("Gracias por usar nuestros servicios")
