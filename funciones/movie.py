@@ -24,6 +24,7 @@ def crearMovie():
         "duracion":duracion,
         "sinopsis":sinopsis
     }
+    pelicula=dataTemp["blockbuster"]["peliculas"]
     pelicula.update({idM:movie})
     dataGenre = cf.readFile(g.DATA_G)
     if len(dataGenre)==0:
@@ -49,6 +50,7 @@ def crearMovie():
                 movie.update({opG:temp})
                 isTrue = False
         isActive = bool(input("Desea ingresar un genero adicional? Cualquier tecla para continuar ... Enter para finalizar"))
+    peliculas=dataTemp["blockbuster"]
     peliculas.update({"peliculas":pelicula})
     blockbuster.update(peliculas)
     cf.addData(DATA_M,blockbuster)
