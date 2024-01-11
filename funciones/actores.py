@@ -17,7 +17,7 @@ def listarActor():
     cf.checkFile(DATA_A,genero)
     dataTemp = cf.readFile(DATA_A)
     if len(dataTemp)==0:
-        print("No se tienen generos registrados.")
+        print("No se tienen actores registrados.")
         os.system("pause")
     else:
         for i,item in dataTemp.items():
