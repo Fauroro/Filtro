@@ -10,6 +10,16 @@
                     "id": "G01",
                     "nombre": "accion"
                 }
+            },
+            "P02": {
+                "id": "P02",
+                "nombre": "dsafa",
+                "duracion": "dsafsadf",
+                "sinopsis": "dsafsad",
+                "G01": {
+                    "id": "G01",
+                    "nombre": "accion"
+                }
             }
         }
     }
